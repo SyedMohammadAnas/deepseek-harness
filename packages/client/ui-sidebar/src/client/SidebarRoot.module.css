@@ -429,45 +429,13 @@
   padding: 8px 12px;
   margin: 0 calc(var(--dsh-sidebar-paint-inset) + 1px);
   box-sizing: border-box;
-  border: 0.5px solid var(--dsw-alias-border-l3);
-  border-radius: var(--dsw-radius-md);
-  background: var(--dsw-alias-button-elevated-fill);
-  color: var(--dsw-alias-label-primary);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 22px;
-  cursor: pointer;
+  /* Skin belongs to the shadcn button variant; this rule keeps only the
+     rail's layout contract (container query, insets, rail width). */
   overflow: hidden;
 }
 
-@media (hover: hover) {
-  .newSession:hover {
-    background: var(--dsw-alias-button-floating-hover);
-  }
-}
-
-/* macOS: the themed elevated fill reads as a foreign slab on the vibrancy
-   sidebar; a white wash sits in the glass like native macOS sidebar
-   controls. Dark keeps the same white ink at lower alpha. */
-:global([data-platform='darwin']) :where(.root:not([role='dialog'])) .newSession {
-  background: rgb(255 255 255 / 0.55);
-}
-
-@media (hover: hover) {
-  :global([data-platform='darwin']) :where(.root:not([role='dialog'])) .newSession:hover {
-    background: rgb(255 255 255 / 0.3);
-  }
-}
-
-:global([data-platform='darwin']) :global([data-ds-dark-theme]) :where(.root:not([role='dialog'])) .newSession {
-  background: rgb(255 255 255 / 0.15);
-}
-
-@media (hover: hover) {
-  :global([data-platform='darwin']) :global([data-ds-dark-theme]) :where(.root:not([role='dialog'])) .newSession:hover {
-    background: rgb(255 255 255 / 0.2);
-  }
-}
+/* The shadcn primary variant owns the fill, hover and focus skin; the
+   legacy hover and macOS vibrancy overrides are retired. */
 
 .collapsed .newSession {
   align-self: flex-start;

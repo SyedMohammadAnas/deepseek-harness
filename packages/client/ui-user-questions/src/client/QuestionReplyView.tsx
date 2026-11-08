@@ -3,7 +3,7 @@ import { memo } from 'react'
 import type {} from '@deepseek-ai/dsh-client-ui-chat/client'
 import type { PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 import {
-  IconCheckOutlineRegular, IconCopyOutlineRegular, Tooltip, UserMessageBubble, useClipboardCopy,
+  Button, IconCheckOutlineRegular, IconCopyOutlineRegular, Tooltip, UserMessageBubble, useClipboardCopy,
 } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { QuestionReplyData } from './question-reply.ts'
 import { replyAnswerValues, replyClipboardText } from './question-reply.ts'
@@ -52,9 +52,14 @@ export function QuestionReplyBubble({ data, t }: { data: QuestionReplyData; t: P
           {new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit', hour12: false }).format(data.time)}
         </span>
         <Tooltip label={copied ? t('copied') : t('copy')} side="bottom">
-          <button type="button" className={css.action} aria-label={copied ? t('copied') : t('copy')} onClick={onCopy}>
+          <Button
+            variant="ghost"
+            className="size-7 shrink-0 p-0 text-muted-foreground hover:text-foreground"
+            aria-label={copied ? t('copied') : t('copy')}
+            onClick={onCopy}
+          >
             {copied ? <IconCheckOutlineRegular /> : <IconCopyOutlineRegular />}
-          </button>
+          </Button>
         </Tooltip>
       </div>
     </div>

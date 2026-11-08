@@ -27,7 +27,7 @@
   box-sizing: border-box;
   min-height: 76px;
   padding: 10px 28px 0 20px;
-  border-bottom: 0.5px solid var(--dsw-alias-border-l3);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l3);
 }
 
 .header:where(:not(:has(.tabs))) {
@@ -285,15 +285,20 @@
   background: transparent;
 }
 
-/* Selected tab is blue, not ink: brand-primary resolves to neutral black in
-   this token sheet, so the selected state rides the business blue — the
-   nearest semantic token that stays blue in both themes. */
+/* Selected tab rides the brand accent: in the thegacs layer brand-primary is
+   the orange, so the selected label and its underline share one colour. */
 .tabActive {
-  color: var(--dsw-alias-state-business-primary);
+  color: var(--dsw-alias-brand-primary);
 }
 
 .tabActive::after {
-  background: var(--dsw-alias-state-business-primary);
+  background: var(--dsw-alias-brand-primary);
+}
+
+@media (hover: hover) {
+  .tab:not(.tabActive):hover {
+    color: var(--dsw-alias-label-secondary);
+  }
 }
 
 /* The More launcher centers its 22px box on the tab's 16px text line. */

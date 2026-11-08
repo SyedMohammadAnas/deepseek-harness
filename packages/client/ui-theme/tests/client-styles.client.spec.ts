@@ -57,7 +57,7 @@ describe('ui-theme client styles', () => {
     vi.stubGlobal('matchMedia', undefined)
     vi.stubGlobal('devicePixelRatio', 2)
     await mountStyles()
-    expect(document.documentElement.style.getPropertyValue(HAIRLINE_WIDTH)).toBe('0.5px')
+    expect(document.documentElement.style.getPropertyValue(HAIRLINE_WIDTH)).toBe('0.2px')
   })
 
   it('mounts and releases styles without publishing a DPR width for a detached document', async () => {
@@ -109,16 +109,10 @@ describe('ui-theme client styles', () => {
       })
     })
 
-    it.each([
-      { dpr: 1, width: 1 },
-      { dpr: 1.25, width: 0.8 },
-      { dpr: 2, width: 0.5 },
-      { dpr: 3, width: 1 / 3 },
-      { dpr: 4, width: 0.5 },
-    ])('matches a 0.5px border at DPR $dpr', async ({ dpr, width }) => {
+    it.each([1, 1.25, 2, 3, 4])('publishes the 0.2px hairline at DPR %s', async (dpr) => {
       vi.stubGlobal('devicePixelRatio', dpr)
       await mountStyles()
-      expect(document.documentElement.style.getPropertyValue(HAIRLINE_WIDTH)).toBe(`${width}px`)
+      expect(document.documentElement.style.getPropertyValue(HAIRLINE_WIDTH)).toBe('0.2px')
       expect(queries.map(query => query.media)).toEqual([`(resolution: ${dpr}dppx)`])
     })
 
@@ -126,10 +120,10 @@ describe('ui-theme client styles', () => {
       await mountStyles()
       vi.stubGlobal('devicePixelRatio', 2)
       queries[0]!.dispatchEvent(new Event('change'))
-      expect(document.documentElement.style.getPropertyValue(HAIRLINE_WIDTH)).toBe('0.5px')
+      expect(document.documentElement.style.getPropertyValue(HAIRLINE_WIDTH)).toBe('0.2px')
       vi.stubGlobal('devicePixelRatio', 1)
       queries[1]!.dispatchEvent(new Event('change'))
-      expect(document.documentElement.style.getPropertyValue(HAIRLINE_WIDTH)).toBe('1px')
+      expect(document.documentElement.style.getPropertyValue(HAIRLINE_WIDTH)).toBe('0.2px')
       expect(queries.map(query => query.media)).toEqual(['(resolution: 3dppx)', '(resolution: 2dppx)', '(resolution: 1dppx)'])
       queries[0]!.dispatchEvent(new Event('change'))
       expect(queries).toHaveLength(3)
@@ -147,7 +141,7 @@ describe('ui-theme client styles', () => {
       expect(queries).toHaveLength(1)
       vi.stubGlobal('devicePixelRatio', 2)
       const second = await mountStyles()
-      expect(root.style.getPropertyValue(HAIRLINE_WIDTH)).toBe('0.5px')
+      expect(root.style.getPropertyValue(HAIRLINE_WIDTH)).toBe('0.2px')
       await second.dispose()
       queries[1]!.dispatchEvent(new Event('change'))
       expect(queries).toHaveLength(2)

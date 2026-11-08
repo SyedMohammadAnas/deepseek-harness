@@ -51,7 +51,7 @@ export { RiskConfirmation } from './RiskConfirmation.tsx'
 export type { RiskConfirmationProps } from './RiskConfirmation.tsx'
 export { ConnectionIndicator } from './ConnectionIndicator.tsx'
 export type { ConnectionIndicatorState } from './ConnectionIndicator.tsx'
-export { FishLogo, FISH_LOGO_PATH, FISH_LOGO_VIEWBOX } from './FishLogo.tsx'
+export { FishLogo, FISH_LOGO_PATH, FISH_LOGO_TRANSFORM, FISH_LOGO_VIEWBOX } from './FishLogo.tsx'
 export { BrandWordmark } from './BrandWordmark.tsx'
 export type { BrandWordmarkProps } from './BrandWordmark.tsx'
 export {
@@ -138,3 +138,32 @@ export type { QuotePreviewProps, QuotePreviewRemoval } from './QuotePreview.tsx'
 export { formatQuoteText } from './markdown/quote-text.ts'
 
 export type { MarkdownMenuTarget } from './markdown/MarkdownDelegate.tsx'
+
+/* thegacs shadcn kit (fork): shared controls for the rebuilt UI.
+   Names carry a Shad prefix while the inherited primitives still exist, so
+   both generations can be consumed during the screen-by-screen migration. */
+export {
+  Avatar as ShadAvatar, AvatarFallback as ShadAvatarFallback, AvatarImage as ShadAvatarImage,
+  Badge as ShadBadge, badgeVariants as shadBadgeVariants, Button as ShadButton,
+  buttonVariants as shadButtonVariants, Card as ShadCard, CardContent as ShadCardContent,
+  CardDescription as ShadCardDescription, CardFooter as ShadCardFooter, CardHeader as ShadCardHeader,
+  CardTitle as ShadCardTitle, Dialog as ShadDialog, DialogClose as ShadDialogClose,
+  DialogContent as ShadDialogContent, DialogDescription as ShadDialogDescription,
+  DialogFooter as ShadDialogFooter, DialogHeader as ShadDialogHeader, DialogOverlay as ShadDialogOverlay,
+  DialogPortal as ShadDialogPortal, DialogTitle as ShadDialogTitle, DialogTrigger as ShadDialogTrigger,
+  DropdownMenu as ShadDropdownMenu, DropdownMenuCheckboxItem as ShadDropdownMenuCheckboxItem,
+  DropdownMenuContent as ShadDropdownMenuContent, DropdownMenuGroup as ShadDropdownMenuGroup,
+  DropdownMenuItem as ShadDropdownMenuItem, DropdownMenuLabel as ShadDropdownMenuLabel,
+  DropdownMenuPortal as ShadDropdownMenuPortal, DropdownMenuRadioGroup as ShadDropdownMenuRadioGroup,
+  DropdownMenuRadioItem as ShadDropdownMenuRadioItem, DropdownMenuSeparator as ShadDropdownMenuSeparator,
+  DropdownMenuShortcut as ShadDropdownMenuShortcut, DropdownMenuSub as ShadDropdownMenuSub,
+  DropdownMenuSubContent as ShadDropdownMenuSubContent, DropdownMenuSubTrigger as ShadDropdownMenuSubTrigger,
+  DropdownMenuTrigger as ShadDropdownMenuTrigger, Input as ShadInput, Label as ShadLabel,
+  Popover as ShadPopover, PopoverContent as ShadPopoverContent, PopoverTrigger as ShadPopoverTrigger,
+  ScrollArea as ShadScrollArea, ScrollBar as ShadScrollBar, Separator as ShadSeparator,
+  Skeleton as ShadSkeleton, Switch as ShadSwitch, Tabs as ShadTabs, TabsContent as ShadTabsContent,
+  TabsList as ShadTabsList, TabsTrigger as ShadTabsTrigger, Tooltip as ShadTooltip,
+  TooltipContent as ShadTooltipContent, TooltipProvider as ShadTooltipProvider,
+  TooltipTrigger as ShadTooltipTrigger, cn as shadCn,
+} from './shadcn/index.ts'
+export type { BadgeProps as ShadBadgeProps, ButtonProps as ShadButtonProps } from './shadcn/index.ts'

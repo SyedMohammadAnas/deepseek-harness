@@ -27,7 +27,7 @@
  * chevron, and each row whose value that selection carries shows one in place
  * of its check mark.
  */
-import { MenuGroup, MenuSurface, observeStickyMenuGroups } from '@deepseek-ai/dsh-client-ui-primitives'
+import { Button, MenuGroup, MenuSurface, observeStickyMenuGroups } from '@deepseek-ai/dsh-client-ui-primitives'
 import {
   useEffect, useId, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore,
   type CSSProperties, type KeyboardEvent, type FocusEvent,
@@ -441,10 +441,10 @@ export function ModelSelect(
         if (event.target instanceof Element && event.target.closest('button') !== null) event.preventDefault()
       }}
     >
-      <button
+      <Button
         ref={triggerRef}
-        type="button"
-        className={css.trigger}
+        variant="ghost"
+        className="h-7 max-w-[360px] shrink-0 gap-1 px-2 text-[13px] font-normal text-muted-foreground [anchor-name:var(--dsh-model-anchor)] data-[selection-focus]:focus-visible:ring-0"
         style={anchorStyle}
         aria-label={triggerAria}
         aria-haspopup="menu"
@@ -471,7 +471,7 @@ export function ModelSelect(
         {busy
           ? <StateDot state="ongoing" />
           : <IconChevronDownOutlineRegular className={clsx(css.chevron, open && css.chevronOpen)} />}
-      </button>
+      </Button>
 
       {/* Portaled to body (Menu primitive's portal mode) so the sidebar and
           column overflow clips cannot crop the card; synthetic events still

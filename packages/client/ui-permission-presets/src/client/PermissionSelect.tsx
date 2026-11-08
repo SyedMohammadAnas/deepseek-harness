@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import clsx from 'clsx'
 import {
-  IconChevronDownOutlineRegular, Menu, PermissionIconAutoReviewRegular, PermissionIconFullAccessRegular,
+  Button, IconChevronDownOutlineRegular, Menu, PermissionIconAutoReviewRegular, PermissionIconFullAccessRegular,
   PermissionIconReadOnlyRegular, PermissionIconWorkspaceWriteRegular, RiskConfirmation,
 } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { MenuEntry } from '@deepseek-ai/dsh-client-ui-primitives'
@@ -172,9 +172,9 @@ export function PermissionSelect({
         side="top"
         portal
         anchor={
-          <button
-            type="button"
-            className={css.trigger}
+          <Button
+            variant="ghost"
+            className="h-7 max-w-[220px] shrink-0 gap-1 px-2 text-[13px] font-medium text-muted-foreground"
             aria-label={t('mode', { name: currentLabel })}
             title={current === undefined ? undefined : optionDescription(current, t)}
             disabled={locked || busy}
@@ -187,7 +187,7 @@ export function PermissionSelect({
             <span className={clsx(css.chevron, open && css.chevronOpen)} aria-hidden>
               <IconChevronDownOutlineRegular />
             </span>
-          </button>
+          </Button>
         }
       />
       {confirmation !== null && (

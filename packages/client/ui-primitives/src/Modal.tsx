@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import type { KeyboardEventHandler, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import clsx from 'clsx'
+import { Button } from './Button.tsx'
 import { IconCloseOutlineRegular, IconWarningOutlineRegular } from './icons/index.tsx'
 import { useModalLayer } from './useModalLayer.ts'
 import css from './Modal.module.css'
@@ -78,9 +79,9 @@ export function Modal({
                     {tone === 'warning' && <IconWarningOutlineRegular size={18} className={css.warningIcon} aria-hidden="true" />}
                     {title}
                   </h2>
-                  <button type="button" className={css.close} aria-label={closeLabel} onClick={onClose}>
+                  <Button variant="ghost" className="h-7 w-7 shrink-0 p-0" aria-label={closeLabel} onClick={onClose}>
                     <IconCloseOutlineRegular size={14} />
-                  </button>
+                  </Button>
                 </div>
                 {description !== undefined && description !== '' && (
                   <p className={css.description}>{description}</p>

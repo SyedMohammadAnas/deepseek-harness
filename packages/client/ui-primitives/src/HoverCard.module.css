@@ -7,7 +7,8 @@
 
 /* The preview remains hit-testable so pointer entry cancels the grace close. */
 .card {
-  --dsw-hovercard-bg: #2C2C2E;
+  /* shadcn popover surface: theme-aware instead of a fixed dark card. */
+  --dsw-hovercard-bg: var(--popover, var(--dsw-alias-bg-layer-3));
   position: fixed;
   z-index: 100;
   box-sizing: border-box;
@@ -15,6 +16,7 @@
   padding: 12px 16px;
   border-radius: var(--dsw-radius-lg);
   background: var(--dsw-hovercard-bg);
+  color: var(--popover-foreground, var(--dsw-alias-label-primary));
   box-shadow: var(--dsw-shadow-lv3);
 }
 
@@ -34,7 +36,7 @@
 }
 
 .copied {
-  color: #FFFFFF;
+  color: var(--popover-foreground, var(--dsw-alias-label-primary));
   font-size: 14px;
   line-height: 20px;
   text-align: center;

@@ -107,7 +107,10 @@ async function serveStatic(
       const refusal = authorizeIndex()
       if (refusal !== undefined) return refusal
       body = renderIndex(await readFile(distIndex, 'utf8'))
-      headers = { 'content-type': HTML_MIME }
+      // The document pins the client module revisions the page loads. Without a
+      // cache directive a browser heuristically reuses the first document, so a
+      // rebuilt bundle never reaches an open tab even after a reload.
+      headers = { 'content-type': HTML_MIME, 'cache-control': 'no-cache' }
     } else {
       body = await readFile(target)
       // Weak: gzip changes the transferred bytes.

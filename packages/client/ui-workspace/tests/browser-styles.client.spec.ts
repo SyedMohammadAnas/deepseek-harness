@@ -133,7 +133,7 @@ describe('WorkspaceBrowser.module.css list', () => {
     expect(rowDeclarations('.searchResultRow')?.get('min-height')).toBe('48px')
     expect(rowDeclarations('.searchResultTitle')?.get('margin')).toBe('0 var(--dsh-sidebar-label-gap)')
     expect(rowDeclarations('.sessionRow.selected')?.get('background-color'))
-      .toBe('var(--dsw-alias-interactive-bg-hover)')
+      .toBe('var(--dsw-alias-bg-multi-select)')
   })
 
   it('shares action spacing and inset backgrounds without moving the title column', () => {
@@ -177,7 +177,6 @@ describe('WorkspaceBrowser.module.css list', () => {
     expect(declarations('.root:not(.rail) .sectionHeader:not(:has(.searchExpanded))')?.get('margin-right')).toBe('-4px')
     expect(declarations('.searchExpanded')?.get('width')).toBe('100%')
     expect(declarations('.searchExpanded')?.get('margin-inline')).toBe('0')
-    expect(declarations('.searchExpanded .searchButton')?.get('height')).toBe('32px')
     expect(declarations('.sectionHeader:has(.searchExpanded) .sectionLabelHidden')?.get('margin-right')).toBe('0')
     expect(declarations('.list')?.get('overflow')).toBe('visible')
     expect(declarations('.listArea')?.get('min-height')).toBe('0')

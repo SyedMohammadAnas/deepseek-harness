@@ -10,7 +10,7 @@
 .frontmatter {
   margin: 0 0 16px;
   padding: 10px 12px;
-  border: 0.5px solid var(--dsw-alias-border-l2);
+  border: 0.2px solid var(--dsw-alias-border-l2);
   border-radius: var(--dsw-radius-md);
   background: var(--dsw-alias-bg-layer-1);
   font: var(--dsw-font-markdown-small);

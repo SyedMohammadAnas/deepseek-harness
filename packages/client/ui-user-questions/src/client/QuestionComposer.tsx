@@ -497,8 +497,9 @@ function QuestionFlow({ pending, t, useStore, useQuestionCard, actions }: Questi
               <span className={css.waitStatus}>{t('wait.held')}</span>
             )}
             {review !== undefined && <span className={css.waitStatus}>{t('review.status')}</span>}
-            <button
-              type="button" className={css.iconButton}
+            <Button
+              variant="ghost"
+              className="size-6 shrink-0 rounded-full p-0 text-muted-foreground"
               aria-label={t(minimized ? 'nav.maximize' : 'nav.minimize')}
               title={t(minimized ? 'nav.maximize' : 'nav.minimize')}
               aria-expanded={!minimized}
@@ -506,15 +507,16 @@ function QuestionFlow({ pending, t, useStore, useQuestionCard, actions }: Questi
               onClick={() => { setMinimized(current => !current) }}
             >
               {minimized ? <IconChevronUpOutlineRegular /> : <IconChevronDownOutlineRegular />}
-            </button>
-            <button
-              type="button" className={css.iconButton}
+            </Button>
+            <Button
+              variant="ghost"
+              className="size-6 shrink-0 rounded-full p-0 text-muted-foreground"
               aria-label={t(pending.dismissal === 'hide' ? 'nav.close' : 'nav.cancel')}
               title={t(pending.dismissal === 'hide' ? 'nav.close' : 'nav.cancel')}
               disabled={busy !== null} onClick={dismissFlow}
             >
               <IconCloseOutlineRegular />
-            </button>
+            </Button>
           </div>
         </header>
 

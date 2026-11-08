@@ -1790,7 +1790,7 @@ describe('Task detail metrics', () => {
     expect(instruction).toMatch(/max-height:\s*160px;/)
     expect(instruction).toMatch(/field-sizing:\s*content;/)
     expect(instruction).toMatch(/padding:\s*12px;/)
-    expect(instruction).toMatch(/border:\s*0\.5px solid var\(--dsw-alias-border-l3\);/)
+    expect(instruction).toMatch(/border:\s*0\.2px solid var\(--dsw-alias-border-l3\);/)
     expect(instruction).toMatch(/border-radius:\s*16px;/)
     // The mock inherits the instruction's 14px text and pins its own 24px leading.
     expect(instruction).toMatch(/font-size:\s*14px;/)
@@ -1906,7 +1906,7 @@ describe('Mock detail metrics shared with the task list', () => {
     // The selected chip keeps the chip's own weight; only the fill marks it.
     expect(rule('filterTabActive')).not.toMatch(/font-weight/)
     // The search row fixes the mock's 36px control height for the field and the
-    // square More trigger, and keeps the hairline at the repository's 0.5px.
+    // square More trigger, and keeps the hairline at the fork's 0.2px.
     expect(rule('searchTools')).toMatch(/--task-search-height:\s*36px;/)
     expect(rule('catalogMore')).toMatch(/width:\s*var\(--task-search-height\);/)
     expect(rule('catalogMore')).toMatch(/height:\s*var\(--task-search-height\);/)
@@ -1914,7 +1914,7 @@ describe('Mock detail metrics shared with the task list', () => {
     const field = rule('searchField')
     expect(field).toMatch(/height:\s*var\(--task-search-height\);/)
     expect(field).toMatch(/padding:\s*0 10px;/)
-    expect(field).toMatch(/border:\s*0\.5px solid var\(--dsw-alias-border-l3\);/)
+    expect(field).toMatch(/border:\s*0\.2px solid var\(--dsw-alias-border-l3\);/)
     expect(field).toMatch(/border-radius:\s*12px;/)
     expect(stylesheet).toMatch(/\.searchField:hover\s*\{[^}]*border-color:\s*var\(--dsw-alias-border-l2\);/)
     expect(stylesheet)
@@ -1999,7 +1999,7 @@ describe('Mock detail metrics shared with the task list', () => {
   it('styles the run-time heading as an editor field label and states the l4 panel edge', () => {
     expect(rule('editorField > h3')).toMatch(/margin:\s*0;/)
     expect(rule('editorField > h3')).toMatch(/font:\s*inherit;/)
-    expect(rule('detail')).toMatch(/border-left:\s*0\.5px solid var\(--dsw-alias-border-l4\);/)
+    expect(rule('detail')).toMatch(/border-left:\s*0\.2px solid var\(--dsw-alias-border-l4\);/)
   })
 
   it('steps the detail gutter at the mock breakpoints and drops the retired 18px step', () => {

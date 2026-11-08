@@ -18,7 +18,7 @@
   --dsl-terminal-output-max-height: 224px;
   --dsl-terminal-command-whitespace: pre-wrap;
   margin: 4px 0 4px 4px;
-  border: 0.5px solid var(--dsw-alias-border-l1);
+  border: 0.2px solid var(--dsw-alias-border-l1);
 }
 
 /* A bash execution error can settle without terminal-card material (for
@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   margin: 4px 0 4px 4px;
-  border: 0.5px solid var(--dsw-alias-border-l1);
+  border: 0.2px solid var(--dsw-alias-border-l1);
   border-radius: var(--dsw-radius-lg);
   background: var(--dsw-alias-markdown-code-block);
   font: var(--dsw-font-markdown-code-block-small);
@@ -214,7 +214,7 @@
   gap: 4px;
   margin: 4px 0 2px 4px;
   padding: 2px 8px;
-  border: 0.5px solid var(--dsw-alias-border-l4);
+  border: 0.2px solid var(--dsw-alias-border-l4);
   border-radius: 999px;
   corner-shape: round;
   /* Base background, not bg-overlay: the overlay token reads too heavy. */

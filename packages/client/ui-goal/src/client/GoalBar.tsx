@@ -11,7 +11,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { GoalActivation, GoalSnapshot } from '@deepseek-ai/dsh-goal/client'
 import {
-  IconCheckOutlineRegular, IconCloseOutlineRegular, IconEditOutlineRegular, IconGoalOutlineRegular,
+  Button, IconCheckOutlineRegular, IconCloseOutlineRegular, IconEditOutlineRegular, IconGoalOutlineRegular,
   IconPauseOutlineRegular, IconPlayOutlineRegular, IconTrashOutlineRegular, InlineEditor, Tooltip,
 } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { InjectFace, PropsLocale, TranslateNS } from '@deepseek-ai/dsh-client-ui-slots'
@@ -99,26 +99,28 @@ export function GoalBar({ goal, activation, onEdit, onPause, onResume, onClear, 
           {actionError !== null && <span className={css.error} role="alert">{actionError}</span>}
           <div className={css.actions}>
             <Tooltip portal label={t('action.save')} side="bottom" delayMs={500}>
-              <button
+              <Button
                 type="button"
-                className={css.iconBtn}
+                variant="ghost"
+                className="size-7 shrink-0 rounded-full p-0"
                 onClick={() => { void handleEdit() }}
                 disabled={pending || draft.trim() === ''}
                 aria-label={t('action.save')}
               >
                 <IconCheckOutlineRegular size={14} />
-              </button>
+              </Button>
             </Tooltip>
             <Tooltip portal label={t('action.cancel')} side="bottom" delayMs={500}>
-              <button
+              <Button
                 type="button"
-                className={css.iconBtn}
+                variant="ghost"
+                className="size-7 shrink-0 rounded-full p-0"
                 onClick={() => { setEditing(false) }}
                 disabled={pending}
                 aria-label={t('action.cancel')}
               >
                 <IconCloseOutlineRegular size={14} />
-              </button>
+              </Button>
             </Tooltip>
           </div>
         </div>
@@ -139,33 +141,33 @@ export function GoalBar({ goal, activation, onEdit, onPause, onResume, onClear, 
         <div className={css.actions}>
           {goal.phase === 'active' && activation === 'armed' && (
             <Tooltip portal label={t('action.pause')} side="bottom" delayMs={500}>
-              <button type="button" className={css.iconBtn} disabled={pending} onClick={() => { void runAction(onPause) }} aria-label={t('action.pause')}>
+              <Button type="button" variant="ghost" className="size-7 shrink-0 rounded-full p-0" disabled={pending} onClick={() => { void runAction(onPause) }} aria-label={t('action.pause')}>
                 <IconPauseOutlineRegular size={14} />
-              </button>
+              </Button>
             </Tooltip>
           )}
           {showResume && (
             <Tooltip portal label={t('action.resume')} side="bottom" delayMs={500}>
-              <button type="button" className={css.iconBtn} disabled={pending} onClick={() => { void runAction(onResume) }} aria-label={t('action.resume')}>
+              <Button type="button" variant="ghost" className="size-7 shrink-0 rounded-full p-0" disabled={pending} onClick={() => { void runAction(onResume) }} aria-label={t('action.resume')}>
                 <IconPlayOutlineRegular size={14} />
-              </button>
+              </Button>
             </Tooltip>
           )}
           <Tooltip portal label={t('action.edit')} side="bottom" delayMs={500}>
-            <button
+            <Button
               type="button"
-              className={css.iconBtn}
+              variant="ghost" className="size-7 shrink-0 rounded-full p-0"
               disabled={pending}
               onClick={() => { setDraft(goal.objective); setEditing(true) }}
               aria-label={t('action.edit')}
             >
               <IconEditOutlineRegular size={14} />
-            </button>
+            </Button>
           </Tooltip>
           <Tooltip portal label={t('action.clear')} side="bottom" delayMs={500}>
-            <button type="button" className={css.iconBtn} disabled={pending} onClick={() => { void handleClear(goal.id) }} aria-label={t('action.clear')}>
+            <Button type="button" variant="ghost" className="size-7 shrink-0 rounded-full p-0" disabled={pending} onClick={() => { void handleClear(goal.id) }} aria-label={t('action.clear')}>
               <IconTrashOutlineRegular size={14} />
-            </button>
+            </Button>
           </Tooltip>
         </div>
       </div>

@@ -182,7 +182,10 @@
 }
 
 .navCell.active {
-  background: var(--dsw-specific-sidebar-nav-item-active);
+  /* shadcn nav item: the accent rung plus the medium weight, not a separate
+     product token. */
+  background: var(--dsw-alias-bg-multi-select);
+  font-weight: 500;
 }
 
 .navIcon {
@@ -220,21 +223,6 @@
 }
 
 /* Compact close control. */
-.close {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border: none;
-  border-radius: var(--dsw-radius-sm);
-  background: transparent;
-  cursor: pointer;
-  color: var(--dsw-alias-label-primary);
-}
-
 @media (hover: hover) {
   .close:hover {
     background-color: var(--dsw-alias-interactive-bg-hover);

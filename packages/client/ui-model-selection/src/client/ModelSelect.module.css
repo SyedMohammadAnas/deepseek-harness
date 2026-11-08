@@ -6,46 +6,6 @@
 /* Figma 313:14108 ToggleButton: 13/20 regular secondary label, 4px gap,
    12px caption chevron; 28px chip height matches the sibling Plan /
    Read-only selects in the same tool row. */
-.trigger {
-  anchor-name: var(--dsh-model-anchor);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  min-width: 0;
-  /* Preferred width: the composer measures this expanded seat against the
-     space the other controls leave, so the cap must not shrink with the row.
-     A row-relative cap would let the measured demand fall with the available
-     width, and the expanded text would then always fit. */
-  max-width: 360px;
-  height: 28px;
-  padding: 0 4px 0 8px;
-  border: none;
-  /* Rounded chip chrome, matching the sibling permission trigger. */
-  border-radius: var(--dsw-radius-sm);
-  outline: none;
-  background: transparent;
-  color: var(--dsw-alias-label-secondary);
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-@media (hover: hover) {
-  .trigger:hover:not(:disabled) {
-    background: var(--dsw-alias-interactive-bg-hover);
-  }
-}
-
-.trigger:focus-visible:not([data-selection-focus]) {
-  box-shadow: 0 0 0 2px var(--dsw-focus-ring-color, var(--dsw-alias-state-business-primary));
-}
-
-.trigger:disabled {
-  color: var(--dsw-alias-label-dimmed);
-  cursor: default;
-}
-
 .triggerLabel {
   min-width: 0;
   overflow: hidden;

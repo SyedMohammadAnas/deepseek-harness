@@ -47,7 +47,7 @@
   box-sizing: border-box;
   height: 38px;
   padding: 0 6px 0 16px;
-  border-bottom: 0.5px solid var(--dsw-alias-border-l3);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l3);
 }
 
 .path {
@@ -65,7 +65,7 @@
   color: var(--dsw-alias-label-secondary);
   font-size: 12px;
   background: var(--dsw-alias-bg-layer-2);
-  border-bottom: 0.5px solid var(--dsw-alias-border-l1);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l1);
 }
 
 .body {
@@ -207,7 +207,7 @@
   font-size: var(--dsh-content-font-size-secondary, 13px);
   font-family: inherit;
   background: transparent;
-  border: 0.5px solid var(--dsw-alias-border-l2);
+  border: 0.2px solid var(--dsw-alias-border-l2);
   border-radius: var(--dsw-radius-md);
   cursor: pointer;
 }
@@ -258,7 +258,7 @@
   font-family: var(--dsw-font, inherit);
   white-space: normal;
   background: var(--dsw-alias-bg-layer-2);
-  border: 0.5px solid var(--dsw-alias-border-l2);
+  border: 0.2px solid var(--dsw-alias-border-l2);
   border-radius: var(--dsw-radius-sm);
   cursor: pointer;
 }
@@ -279,7 +279,7 @@
   font-family: var(--dsw-font, inherit);
   white-space: normal;
   background: var(--dsw-alias-bg-layer-2);
-  border: 0.5px solid var(--dsw-alias-border-l2);
+  border: 0.2px solid var(--dsw-alias-border-l2);
   border-radius: var(--dsw-radius-sm);
   cursor: pointer;
 }

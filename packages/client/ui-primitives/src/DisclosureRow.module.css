@@ -41,11 +41,20 @@
 
 .row[data-expandable] {
   cursor: pointer;
+  /* shadcn row affordance: a hover pill that hugs the text column without
+     shifting it (negative inline margin cancels the padding). */
+  border-radius: var(--dsw-radius-md);
+  margin-inline: -6px;
+  padding-inline: 6px;
 }
 
 @media (hover: hover) {
   .row:hover {
     color: var(--dsw-alias-label-secondary);
+  }
+
+  .row[data-expandable]:hover {
+    background: var(--dsw-alias-interactive-bg-hover);
   }
 }
 

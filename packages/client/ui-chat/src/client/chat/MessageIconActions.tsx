@@ -3,7 +3,7 @@
 
 import { useId, type ReactNode } from 'react'
 import {
-  IconBranchOutlineRegular, IconCheckOutlineRegular, IconCopyOutlineRegular, Tooltip, useClipboardCopy,
+  Button, IconBranchOutlineRegular, IconCheckOutlineRegular, IconCopyOutlineRegular, Tooltip, useClipboardCopy,
 } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { ChatViewSlotProps } from '../contract/slots.ts'
 import { formatMessageClock } from './message-chrome.ts'
@@ -58,17 +58,24 @@ export function MessageIconActions({
     <div className={className === undefined ? css.actions : `${css.actions} ${className}`} data-clock={clock}>
       {clock === 'start' ? clockEl : null}
       <Tooltip label={copied ? t('copied') : t('copy')} side="bottom">
-        <button type="button" className={css.action} aria-label={copied ? t('copied') : t('copy')} onClick={onCopy}>
+        <Button
+          variant="ghost"
+          data-message-action=""
+          className="size-7 shrink-0 rounded-md p-0 text-muted-foreground hover:text-foreground"
+          aria-label={copied ? t('copied') : t('copy')}
+          onClick={onCopy}
+        >
           {copied ? <IconCheckOutlineRegular /> : <IconCopyOutlineRegular />}
-        </button>
+        </Button>
       </Tooltip>
       {extraActions}
       {onBranch !== undefined && (
         <Tooltip label={branchUnavailable ? t('message.branchUnavailable') : t('message.branch')} side="bottom" openOnClick={branchUnavailable}>
           {/* Native disabled buttons do not deliver the hover/focus events Tooltip needs. */}
-          <button
-            type="button"
-            className={css.action}
+          <Button
+            variant="ghost"
+            data-message-action=""
+            className="size-7 shrink-0 rounded-md p-0 text-muted-foreground hover:text-foreground data-[unavailable]:cursor-default data-[unavailable]:opacity-40"
             aria-label={t('message.branch')}
             aria-disabled={branchUnavailable || undefined}
             aria-describedby={branchUnavailable ? reasonId : undefined}
@@ -76,7 +83,7 @@ export function MessageIconActions({
             onClick={branchUnavailable ? undefined : onBranch}
           >
             <IconBranchOutlineRegular />
-          </button>
+          </Button>
         </Tooltip>
       )}
       {onBranch !== undefined && branchUnavailable && (

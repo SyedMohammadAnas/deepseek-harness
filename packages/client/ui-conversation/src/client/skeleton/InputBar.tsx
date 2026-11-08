@@ -17,7 +17,7 @@ import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useStat
 import type { ChangeEvent, KeyboardEvent, MouseEvent } from 'react'
 import clsx from 'clsx'
 import {
-  focusWithoutRing, IconPlusOutlineMedium, IconTriangleRightFillRegular, IconWarningOutlineRegular, isMobileDevice, Toast, Tooltip,
+  Button, focusWithoutRing, IconPlusOutlineMedium, IconTriangleRightFillRegular, IconWarningOutlineRegular, isMobileDevice, Toast, Tooltip,
 } from '@deepseek-ai/dsh-client-ui-primitives'
 // Type-only: the `plan` projection key merge (the TodoDock posture — the
 // composer reads a host-computed value; the domain owns the key).
@@ -493,9 +493,10 @@ export const InputBar = memo(function InputBar({
         <div ref={rowRef} className={css.row}>
           <div className={css.tools} hidden={activity}>
             <Tooltip label={t('input.commands')} side="top" delayMs={500} portal>
-              <button
-                type="button"
-                className={css.add}
+              <Button
+                variant="ghost"
+                size="sm"
+                className="size-7 shrink-0 rounded-full p-0"
                 aria-label={t('input.commands')}
                 aria-haspopup="listbox"
                 aria-expanded={commandMenuOpen}
@@ -504,7 +505,7 @@ export const InputBar = memo(function InputBar({
                 onClick={onToggleCommandMenu}
               >
                 <IconPlusOutlineMedium size={14} />
-              </button>
+              </Button>
             </Tooltip>
             <input
               ref={fileInputRef}
@@ -534,9 +535,10 @@ export const InputBar = memo(function InputBar({
             </div>}
             {interruptible && !cancelDenied && (
               <Tooltip label={t('input.stop')} shortcutKeys={stopKeys} side="top" delayMs={500} disabled={stopAction === undefined} portal>
-                <button
-                  type="button"
-                  className={css.primary}
+                <Button
+                  variant="primary"
+                  size="sm"
+                  className="size-[34px] shrink-0 -translate-y-0.5 rounded-full bg-linear-to-br from-[#F16001] to-[#C10801] p-0 hover:from-[#F16001] hover:to-[#E85002]"
                   aria-label={t('input.stop')}
                   disabled={stopAction === undefined}
                   onMouseDown={keepFocus}
@@ -545,14 +547,15 @@ export const InputBar = memo(function InputBar({
                   <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden>
                     <rect x="3" y="3" width="10" height="10" rx="3" fill="currentColor" />
                   </svg>
-                </button>
+                </Button>
               </Tooltip>
             )}
             {(primaryStops ? cancelDenied : promptDenied) ? null : (
               <Tooltip label={primaryStops ? t('input.stop') : primaryLabel} shortcutKeys={primaryStops ? stopKeys : undefined} side="top" delayMs={500} disabled={primaryDisabled} portal>
-                <button
-                  type="button"
-                  className={css.primary}
+                <Button
+                  variant="primary"
+                  size="sm"
+                  className="size-[34px] shrink-0 -translate-y-0.5 rounded-full bg-linear-to-br from-[#F16001] to-[#C10801] p-0 hover:from-[#F16001] hover:to-[#E85002]"
                   aria-label={primaryLabel}
                   aria-busy={sending}
                   data-sending={sending ? '' : undefined}
@@ -576,7 +579,7 @@ export const InputBar = memo(function InputBar({
                       <path d="M8.3125 0.980183C8.66767 1.0531 8.97902 1.20418 9.2627 1.43233C9.48724 1.61297 9.73029 1.85793 9.97949 2.10714L14.707 6.83468L13.293 8.24874L9 3.95577V15.0417H7V3.95577L2.70703 8.24874L1.29297 6.83468L6.02051 2.10714C6.26971 1.85793 6.51277 1.61297 6.7373 1.43233C6.97662 1.23986 7.28445 1.04402 7.6875 0.980183C7.8973 0.947006 8.1031 0.95516 8.3125 0.980183Z" fill="currentColor" />
                     </svg>
                   )}
-                </button>
+                </Button>
               </Tooltip>
             )}
           </div>

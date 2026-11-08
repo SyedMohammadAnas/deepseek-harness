@@ -1,9 +1,11 @@
-// Input: single-line text input atom (search boxes, inline forms). Multi-line
-// inline edits use InlineEditor; the composer is owned by the conversation package.
+// Input: single-line text input atom (search boxes, inline forms), rendered
+// through the shadcn input. The leading-icon wrapper stays part of the product
+// contract; the field itself follows the shadcn geometry. Multi-line inline
+// edits use InlineEditor; the composer is owned by the conversation package.
 
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from 'react'
 import clsx from 'clsx'
-import css from './Input.module.css'
+import { Input as ShadInput } from './shadcn/input.tsx'
 
 /**
  * Render a text input with an optional leading icon.
@@ -16,9 +18,11 @@ export const Input = forwardRef<HTMLInputElement, {
   className?: string
 } & InputHTMLAttributes<HTMLInputElement>>(function Input({ icon, className, ...rest }, ref) {
   return (
-    <span className={clsx(css.wrap, className)}>
-      {icon != null && <span className={css.icon}>{icon}</span>}
-      <input ref={ref} className={css.input} {...rest} />
+    <span className={clsx('relative inline-flex w-full items-center', className)}>
+      {icon != null && (
+        <span className="text-muted-foreground pointer-events-none absolute left-3 flex items-center">{icon}</span>
+      )}
+      <ShadInput ref={ref} className={clsx(icon != null && 'pl-9')} {...rest} />
     </span>
   )
 })

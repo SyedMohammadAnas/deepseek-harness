@@ -54,7 +54,7 @@ describe('ModelsSection theme styles', () => {
 
   it('uses the shared settings card material around the nested editor', () => {
     expect(block('.editor')).toContain('background: var(--dsw-alias-bg-module-platform)')
-    expect(block('.rowCard')).toContain('border: 0.5px solid var(--dsw-alias-settings-card-stroke)')
+    expect(block('.rowCard')).toContain('border: 0.2px solid var(--dsw-alias-settings-card-stroke)')
     expect(block('.rowCard')).toContain('background: var(--dsw-alias-settings-card-fill)')
   })
 

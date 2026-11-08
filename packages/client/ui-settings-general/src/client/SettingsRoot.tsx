@@ -17,7 +17,7 @@ import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from
 import { createPortal } from 'react-dom'
 import clsx from 'clsx'
 import {
-  ConnectionIndicator, Tooltip, useModalLayer,
+  Button, ConnectionIndicator, Tooltip, useModalLayer,
   IconAgentPresetOutlineMedium, IconArchiveOutlineMedium, IconCloseOutlineRegular, IconDataOutlineMedium,
   IconPersonalizationOutlineMedium, IconSettingsOutlineMedium, IconUserOutlineMedium,
 } from '@deepseek-ai/dsh-client-ui-primitives'
@@ -100,10 +100,10 @@ function SettingsPanel({ rows, renderSlot, activeId, onSelect, onClose }: PanelP
         </nav>
         <div className={css.header}>
           <div className={css.actions}>{renderSlot('settings.action', {})}</div>
-          <button type="button" className={css.close} onClick={onClose}>
+          <Button variant="ghost" className="h-7 w-7 shrink-0 p-0" onClick={onClose}>
             <IconCloseOutlineRegular size={14} />
             <span className={css.hiddenLabel}>{renderSlot('settings.close', {})}</span>
-          </button>
+          </Button>
         </div>
         <div className={css.options}>
           {active !== undefined && renderSlot('settings.section', { close: onClose }, { only: active })}

@@ -14,7 +14,7 @@
 }
 
 .tag[data-tone='outline'] {
-  border: 0.5px solid var(--dsw-alias-border-l4);
+  border: 0.2px solid var(--dsw-alias-border-l4);
   color: var(--dsw-alias-label-tertiary);
 }
 

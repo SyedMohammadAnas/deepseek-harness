@@ -1,6 +1,7 @@
 /** Anchor-preserving tooltips; an optional body portal escapes clipping containers and stacking contexts that cap the bubble's z-index. */
 
 import { cloneElement, createContext, useCallback, useContext, useEffect, useId, useRef, useState } from 'react'
+import clsx from 'clsx'
 import type { FocusEventHandler, MouseEventHandler, MutableRefObject, PointerEventHandler, ReactElement, Ref } from 'react'
 import { createPortal } from 'react-dom'
 import { ShortcutKeys } from './ShortcutKeys.tsx'
@@ -209,7 +210,7 @@ export function Tooltip({ label, shortcutKeys, side = 'right', align = 'center',
     <span
       ref={bubble}
       id={openOnClick ? id : undefined}
-      className={css.bubble}
+      className={clsx(css.bubble, 'bg-foreground text-background rounded-md px-3 py-1.5 text-xs leading-5 font-medium shadow-md')}
       data-side={side}
       data-portal={portal || undefined}
       data-pinned={pinned || undefined}

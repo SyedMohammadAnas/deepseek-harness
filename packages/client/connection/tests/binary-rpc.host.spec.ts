@@ -21,7 +21,10 @@ function binaryResponse(rpcId: string, mutate: (parts: FormData) => void = () =>
 }
 
 describe('Connection binary RPC', () => {
-  it.each(['gzip', 'none'] as const)('preserves %s configuration through the HTTP bridge', async (compression) => {
+  // Real HTTP server bootstrap plus a 1 MiB roundtrip: the default 5s budget is
+  // exceeded when the parallel suite saturates the CPU, which surfaced as an
+  // intermittent timeout rather than a failure of the bridge.
+  it.each(['gzip', 'none'] as const)('preserves %s configuration through the HTTP bridge', { timeout: 30000 }, async (compression) => {
     const ctx = new Context()
     try {
       await ctx.plugin(WebServer, { host: '127.0.0.1', port: 0, compression })

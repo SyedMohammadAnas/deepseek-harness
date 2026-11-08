@@ -428,3 +428,184 @@ html[data-platform='darwin'] body {
 html[data-platform='darwin'] body[data-ds-dark-theme] {
   --dsw-specific-menu: rgba(48, 49, 54, 0.94);
 }
+
+/* thegacs brand layer (fork).
+   Palette: orange #E85002, black #000000, gradient to #D9C3AB,
+   light gray #A7A7A7, off-white #F9F9F9, gray #646464, dark gray #333333.
+   Accent statics are remapped to the orange family so links, selection and
+   brand marks follow the palette without per-component edits. */
+body {
+  --dsw-static-deepseek-50: rgb(254, 243, 237);
+  --dsw-static-deepseek-100: rgb(253, 231, 220);
+  --dsw-static-deepseek-200: rgb(251, 207, 187);
+  --dsw-static-deepseek-300: rgb(247, 175, 140);
+  --dsw-static-deepseek-400: rgb(241, 96, 1);
+  --dsw-static-deepseek-450: rgb(232, 80, 2);
+  --dsw-static-deepseek-500: rgb(232, 80, 2);
+  --dsw-static-deepseek-600: rgb(193, 8, 1);
+  --dsw-static-blue-50: rgb(254, 243, 237);
+  --dsw-static-blue-400: rgb(241, 96, 1);
+  --dsw-static-blue-450: rgb(232, 80, 2);
+  --dsw-static-blue-500: rgb(232, 80, 2);
+  --dsw-static-blue-600: rgb(193, 8, 1);
+
+  --dsw-brand-gradient: linear-gradient(135deg, #000000 0%, #C10801 45%, #F16001 75%, #D9C3AB 100%);
+  --dsw-brand-orange: #E85002;
+
+  /* thegacs: the rail reads as a white sheet against the off-white canvas. */
+  --dsw-specific-sidebar-fill: #FFFFFF;
+  /* remaining surface fills drop the inherited blue cast for pure neutral. */
+  --dsw-specific-selector: #F1F1F1;
+  --dsw-specific-sidebar-nav-item-active: #EDEDED;
+  --dsw-specific-login-input: #F9F9F9;
+
+  --dsw-alias-bg-base: #F9F9F9;
+  --dsw-alias-bg-layer-1: #FFFFFF;
+  --dsw-alias-bg-layer-2: #FFFFFF;
+  --dsw-alias-bg-layer-3: #F1F1F1;
+  --dsw-alias-bg-module-platform: #EFEFEF;
+  --dsw-alias-bg-multi-select: #EDEDED;
+  --dsw-alias-bg-overlay: #F1F1F1;
+  --dsw-alias-bg-skeleton: rgba(0, 0, 0, 0.05);
+  --dsw-alias-bg-document-selection: color-mix(in srgb, #E85002 30%, transparent);
+
+  --dsw-alias-label-primary: #000000;
+  --dsw-alias-label-primary-bluish: #000000;
+  --dsw-alias-label-primary-inverted: #F9F9F9;
+  --dsw-alias-label-primary-foreground: #F9F9F9;
+  --dsw-alias-label-secondary: #646464;
+  --dsw-alias-label-tertiary: #8A8A8A;
+  --dsw-alias-label-caption: #A7A7A7;
+  --dsw-alias-label-dimmed: #A7A7A7;
+  --dsw-alias-label-document-preview: #646464;
+
+  --dsw-alias-brand-primary: #E85002;
+  --dsw-alias-brand-primary-invert: #F9F9F9;
+  --dsw-alias-brand-text: #000000;
+  --dsw-alias-button-primary-fill: #E85002;
+  --dsw-alias-button-primary-hover: #F16001;
+  --dsw-alias-button-primary-dimmed: #C10801;
+  --dsw-alias-button-contrast-fill: #000000;
+  --dsw-alias-button-elevated-fill: #FFFFFF;
+  --dsw-alias-button-floating-fill: #FFFFFF;
+  --dsw-alias-button-floating-hover: #F1F1F1;
+  --dsw-alias-button-tool-bar-fill: #F1F1F1;
+  --dsw-alias-button-ghost-active-fill: rgba(232, 80, 2, 0.10);
+  --dsw-alias-button-ghost-active-border: rgba(232, 80, 2, 0.35);
+  --dsw-alias-button-ghost-active-hover: rgba(232, 80, 2, 0.16);
+
+  --dsw-alias-border-l1: rgba(0, 0, 0, 0.06);
+  --dsw-alias-border-l2: rgba(0, 0, 0, 0.08);
+  --dsw-alias-border-l3: rgba(0, 0, 0, 0.12);
+  --dsw-alias-border-l4: rgba(0, 0, 0, 0.16);
+
+  --dsw-alias-interactive-bg-hover: rgba(0, 0, 0, 0.05);
+  --dsw-alias-interactive-bg-active: rgba(0, 0, 0, 0.08);
+  --dsw-alias-interactive-bg-hover-accent: rgba(232, 80, 2, 0.08);
+
+  --dsw-alias-link: #C10801;
+  --dsw-alias-tooltip-bg: #000000;
+  --dsw-alias-tooltip-key-bg: #333333;
+  --dsw-alias-toast-bg: #000000;
+  --dsw-alias-menu-group-header-fill: rgba(0, 0, 0, 0.04);
+  --dsw-alias-markdown-code-block: #F1F1F1;
+  --dsw-alias-markdown-code-block-banner: #EAEAEA;
+  --dsw-alias-markdown-inline-code: #EDEDED;
+  --dsw-alias-turn-trigger-bg: rgba(0, 0, 0, 0.03);
+  --dsw-alias-turn-trigger-bg-hover: rgba(0, 0, 0, 0.06);
+  --dsw-alias-scrollbar-bg-l1: rgba(0, 0, 0, 0.14);
+  --dsw-alias-scrollbar-bg-l2: rgba(0, 0, 0, 0.10);
+  --dsw-alias-scrollbar-hover-l1: rgba(0, 0, 0, 0.26);
+  --dsw-alias-scrollbar-hover-l2: rgba(0, 0, 0, 0.20);
+}
+
+body[data-ds-dark-theme] {
+  --dsw-static-deepseek-50: rgb(30, 16, 10);
+  --dsw-static-deepseek-100: rgb(44, 21, 12);
+  --dsw-static-deepseek-200: rgb(66, 29, 15);
+  --dsw-static-deepseek-300: rgb(112, 45, 20);
+  --dsw-static-deepseek-400: rgb(255, 122, 46);
+  --dsw-static-deepseek-450: rgb(241, 96, 1);
+  --dsw-static-deepseek-500: rgb(232, 80, 2);
+  --dsw-static-deepseek-600: rgb(193, 8, 1);
+  --dsw-static-deepseek-800: rgb(58, 27, 16);
+  --dsw-static-deepseek-900: rgb(38, 20, 13);
+  --dsw-static-blue-50: rgb(30, 16, 10);
+  --dsw-static-blue-400: rgb(255, 122, 46);
+  --dsw-static-blue-450: rgb(241, 96, 1);
+  --dsw-static-blue-500: rgb(232, 80, 2);
+  --dsw-static-blue-600: rgb(193, 8, 1);
+
+  --dsw-brand-gradient: linear-gradient(135deg, #000000 0%, #C10801 45%, #F16001 75%, #D9C3AB 100%);
+  --dsw-brand-orange: #E85002;
+
+  /* thegacs: the rail sits one step above the black canvas. */
+  --dsw-specific-sidebar-fill: #0A0A0A;
+  --dsw-specific-selector: #1A1A1A;
+  --dsw-specific-sidebar-nav-item-active: #1F1F1F;
+  --dsw-specific-login-input: #0A0A0A;
+
+  --dsw-alias-bg-base: #000000;
+  --dsw-alias-bg-layer-1: #0A0A0A;
+  --dsw-alias-bg-layer-2: #111111;
+  --dsw-alias-bg-layer-3: #333333;
+  --dsw-alias-bg-module-platform: #111111;
+  --dsw-alias-bg-multi-select: #1A1A1A;
+  --dsw-alias-bg-overlay: #1A1A1A;
+  --dsw-alias-bg-skeleton: rgba(255, 255, 255, 0.08);
+  --dsw-alias-bg-document-preview: #0A0A0A;
+  --dsw-alias-bg-document-selection: color-mix(in srgb, #E85002 35%, transparent);
+  --dsw-specific-input-major: #111111;
+  --dsw-specific-tip: #111111;
+
+  --dsw-alias-label-primary: #F9F9F9;
+  --dsw-alias-label-primary-bluish: #F9F9F9;
+  --dsw-alias-label-primary-inverted: #000000;
+  --dsw-alias-label-primary-foreground: #000000;
+  --dsw-alias-label-secondary: #A7A7A7;
+  --dsw-alias-label-tertiary: #8A8A8A;
+  --dsw-alias-label-caption: #646464;
+  --dsw-alias-label-dimmed: #646464;
+  --dsw-alias-label-document-preview: #A7A7A7;
+
+  --dsw-alias-brand-primary: #E85002;
+  --dsw-alias-brand-primary-invert: #000000;
+  --dsw-alias-brand-text: #F9F9F9;
+  --dsw-alias-button-primary-fill: #E85002;
+  --dsw-alias-button-primary-hover: #F16001;
+  --dsw-alias-button-primary-dimmed: #C10801;
+  --dsw-alias-button-contrast-fill: #F9F9F9;
+  --dsw-alias-button-elevated-fill: #1A1A1A;
+  --dsw-alias-button-floating-fill: #333333;
+  --dsw-alias-button-floating-hover: #3D3D3D;
+  --dsw-alias-button-tool-bar-fill: rgba(255, 255, 255, 0.04);
+  --dsw-alias-button-ghost-active-fill: rgba(232, 80, 2, 0.16);
+  --dsw-alias-button-ghost-active-border: rgba(232, 80, 2, 0.45);
+  --dsw-alias-button-ghost-active-hover: rgba(232, 80, 2, 0.22);
+
+  --dsw-alias-border-l1: rgba(255, 255, 255, 0.08);
+  --dsw-alias-border-l2: rgba(255, 255, 255, 0.10);
+  --dsw-alias-border-l2-darkmode-thin: rgba(255, 255, 255, 0.10);
+  --dsw-alias-border-l3: rgba(255, 255, 255, 0.14);
+  --dsw-alias-border-l4: rgba(255, 255, 255, 0.18);
+
+  --dsw-alias-interactive-bg-hover: rgba(255, 255, 255, 0.06);
+  --dsw-alias-interactive-bg-active: rgba(255, 255, 255, 0.09);
+  --dsw-alias-interactive-bg-hover-accent: rgba(232, 80, 2, 0.14);
+  --dsw-alias-interactive-bg-hover-solid: #1A1A1A;
+
+  --dsw-alias-link: #F16001;
+  --dsw-alias-tooltip-bg: #333333;
+  --dsw-alias-tooltip-key-bg: #1A1A1A;
+  --dsw-alias-toast-bg: #333333;
+  --dsw-alias-menu-group-header-fill: rgba(255, 255, 255, 0.06);
+  --dsw-alias-markdown-code-block: #0A0A0A;
+  --dsw-alias-markdown-code-block-banner: #1A1A1A;
+  --dsw-alias-markdown-inline-code: #1A1A1A;
+  --dsw-alias-turn-trigger-bg: rgba(255, 255, 255, 0.05);
+  --dsw-alias-turn-trigger-bg-hover: rgba(255, 255, 255, 0.08);
+  --dsw-alias-scrollbar-bg-l1: rgba(255, 255, 255, 0.18);
+  --dsw-alias-scrollbar-bg-l2: rgba(255, 255, 255, 0.12);
+  --dsw-alias-scrollbar-hover-l1: rgba(255, 255, 255, 0.30);
+  --dsw-alias-scrollbar-hover-l2: rgba(255, 255, 255, 0.22);
+}

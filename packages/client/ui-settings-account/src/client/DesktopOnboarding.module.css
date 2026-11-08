@@ -174,7 +174,7 @@
   pointer-events: none;
   transition: opacity 120ms ease, border-color 120ms ease;
 }
-.card::before { border: 0.5px solid var(--dsw-alias-border-l2); }
+.card::before { border: 0.2px solid var(--dsw-alias-border-l2); }
 .card::after {
   padding: 2px;
   background: conic-gradient(from var(--dsh-onboarding-border-angle), var(--card-border-stops));

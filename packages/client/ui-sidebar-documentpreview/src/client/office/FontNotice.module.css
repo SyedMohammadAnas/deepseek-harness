@@ -87,7 +87,7 @@
 
 .fonts li {
   padding: 8px 0;
-  border-top: 0.5px solid var(--dsw-alias-border-l2);
+  border-top: 0.2px solid var(--dsw-alias-border-l2);
 }
 
 @position-try --dsh-fonts-window {

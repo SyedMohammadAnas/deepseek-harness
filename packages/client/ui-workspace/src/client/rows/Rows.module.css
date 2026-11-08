@@ -22,7 +22,9 @@
 }
 
 .sessionRow.selected {
-  background-color: var(--dsw-alias-interactive-bg-hover);
+  /* shadcn list selection: a distinct accent rung above hover, so the active
+     row stays readable while the pointer moves over its neighbours. */
+  background-color: var(--dsw-alias-bg-multi-select);
 }
 
 .dragPreview {
@@ -192,7 +194,7 @@
   font-size: 14px;
   line-height: 20px;
   padding: 0 2px;
-  border: 0.5px solid var(--dsw-alias-border-l4);
+  border: 0.2px solid var(--dsw-alias-border-l4);
   border-radius: var(--dsw-radius-sm);
   background: var(--dsw-alias-button-elevated-fill);
   color: inherit;
@@ -417,21 +419,21 @@
 .hoverTitle {
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: var(--dsw-alias-label-primary);
   overflow-wrap: break-word;
 }
 
 .hoverPath {
   font-size: 12px;
   line-height: 16px;
-  color: #CFD3D6;
+  color: var(--dsw-alias-label-secondary);
   word-break: break-all;
 }
 
 .hoverTime {
   font-size: 12px;
   line-height: 16px;
-  color: #CFD3D6;
+  color: var(--dsw-alias-label-secondary);
 }
 
 .hoverStatus {
@@ -440,7 +442,7 @@
   gap: 8px;
   font-size: 12px;
   line-height: 20px;
-  color: #ADB2B8;
+  color: var(--dsw-alias-label-tertiary);
 }
 
 /* Archive glyph rides the status row's text color; slight inset aligns it with the 6px status dots. */
@@ -477,8 +479,8 @@
   }
 }
 
-/* Chevrons ride the caption grey (#ADB2B8); the folder glyph stays one step
-   darker (tertiary, #81858C) per the cell spec. */
+/* Chevrons ride the caption rung; the folder glyph stays one step darker
+   (tertiary) per the cell spec. */
 .chevron {
   color: var(--dsw-alias-label-caption);
 }

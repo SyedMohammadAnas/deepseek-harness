@@ -1,5 +1,18 @@
 /** Browser entry for the Web client. */
 import '@deepseek-ai/dsh-client-ui-theme/brand-font.css'
+import './theme/shadcn.css'
+
+/** thegacs fork: the shipped web UI is English-only, so it pins the locale
+ * bridge that a native shell would otherwise supply from the operating
+ * system. The locale mechanism itself still supports other languages. */
+const englishLocaleBridge = {
+  read: async (): Promise<{ languages: string[]; preference: string }> => ({
+    languages: ['en'],
+    preference: 'en',
+  }),
+  onChange: (): void => {},
+}
+;(globalThis as { __DSH_LOCALE__?: typeof englishLocaleBridge }).__DSH_LOCALE__ = englishLocaleBridge
 import { AppWebEntry, applyIndexInjections } from '@deepseek-ai/dsh-client-web'
 
 interface DesktopBootGlobal {

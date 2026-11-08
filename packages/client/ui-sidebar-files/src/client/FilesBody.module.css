@@ -40,7 +40,7 @@
   font-size: var(--dsh-content-font-size-secondary, 13px);
   line-height: 1.5;
   background: var(--dsw-alias-bg-base);
-  border-left: 0.5px solid var(--dsw-alias-border-l3);
+  border-left: 0.2px solid var(--dsw-alias-border-l3);
 }
 
 /* The `files` page's navigator fills the page below its header. */
@@ -165,7 +165,7 @@
   box-sizing: border-box;
   height: 38px;
   padding: 0 6px 0 16px;
-  border-bottom: 0.5px solid var(--dsw-alias-border-l3);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l3);
 }
 
 /* The margin plus the header's gap keeps the path 16px clear of reload. */

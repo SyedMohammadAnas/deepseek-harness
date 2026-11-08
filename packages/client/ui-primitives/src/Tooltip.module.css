@@ -12,12 +12,8 @@
   max-width: min(50vw, calc(100vw - 24px));
   max-height: calc(100vh - 24px);
   overflow: auto;
-  padding: 3px 7px;
-  border-radius: var(--dsw-radius-sm);
-  background: var(--dsw-alias-tooltip-bg);
-  color: var(--dsw-static-neutral-bluish-00);
-  font-size: 13px;
-  line-height: 20px;
+  /* Skin comes from the shadcn tooltip classes in Tooltip.tsx; this rule keeps
+     only placement, sizing and wrapping. */
   white-space: pre-line;
   /* Unbreakable tokens (URLs, paths) must not push past max-width. */
   overflow-wrap: break-word;

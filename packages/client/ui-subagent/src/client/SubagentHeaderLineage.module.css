@@ -447,7 +447,7 @@
   content: '';
   position: absolute;
   left: 0;
-  border-left: 0.5px solid var(--dsw-alias-border-l3);
+  border-left: 0.2px solid var(--dsw-alias-border-l3);
 }
 
 .children::before {
@@ -476,7 +476,7 @@
   top: calc(var(--branch-anchor-y) - 0.25px);
   left: -3px;
   width: 12px;
-  border-top: 0.5px solid var(--dsw-alias-border-l3);
+  border-top: 0.2px solid var(--dsw-alias-border-l3);
 }
 
 /* A leaf beside expandable siblings keeps their disclosure column before its status marker. */

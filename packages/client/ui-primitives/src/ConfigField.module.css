@@ -1,11 +1,13 @@
-.field { display: flex; flex-direction: column; gap: 6px; padding: 12px 0; }
-.field + .field { border-top: 0.5px solid var(--dsw-alias-border-l2); }
+/* shadcn settings row: 16px vertical rhythm, hairline separators. */
+.field { display: flex; flex-direction: column; gap: 8px; padding: 16px 0; }
+.field + .field { border-top: 0.2px solid var(--dsw-alias-border-l2); }
 .head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.head label { color: var(--dsw-alias-label-primary); font-size: 13px; font-weight: 500; }
+.head label { color: var(--dsw-alias-label-primary); font-size: 14px; font-weight: 500; }
 .head button { border: none; background: none; color: var(--dsw-alias-label-secondary); font: inherit; cursor: pointer; }
 .field input, .field select, .field textarea {
-  padding: 6px 12px; border: 0.5px solid var(--dsw-alias-border-l4); border-radius: var(--dsw-radius-md);
-  background: var(--dsw-alias-bg-layer-3); color: var(--dsw-alias-label-primary); font: inherit;
+  height: 36px; padding: 0 12px; border: 0.2px solid var(--input, var(--dsw-alias-border-l4));
+  border-radius: var(--dsw-radius-md); background: var(--dsw-alias-bg-base);
+  color: var(--dsw-alias-label-primary); font: inherit;
 }
 .field textarea { resize: vertical; }
 .field [aria-invalid='true'] { border-color: var(--dsw-alias-state-error-primary); }

@@ -42,9 +42,7 @@
 
 /* The action cluster animates its width and the search pill rounds its corners,
  * so both clip an outer ring; these controls keep theirs inside instead. */
-.iconButton:focus-visible,
-.searchButton:focus-visible,
-.clearButton:focus-visible {
+.iconButton:focus-visible {
   outline: var(--dsw-focus-ring-width) solid var(--dsw-focus-ring-color, var(--dsw-alias-state-business-primary));
   outline-offset: -2px;
 }
@@ -202,40 +200,10 @@
   height: 32px;
   margin-inline: 0;
   padding: 0 4px 0 0;
-  border: 0.5px solid var(--dsw-alias-border-l4);
+  border: 0.2px solid var(--dsw-alias-border-l4);
   border-radius: var(--dsw-radius-md);
   background: transparent;
   color: var(--dsw-alias-label-caption);
-}
-
-.searchButton {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border: none;
-  border-radius: var(--dsw-radius-sm);
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
-  color: inherit;
-}
-
-.searchExpanded .searchButton {
-  width: 28px;
-  height: 32px;
-}
-
-@media (hover: hover) {
-  .searchButton:hover {
-    background: var(--dsw-alias-interactive-bg-hover);
-  }
-
-  .searchExpanded .searchButton:hover {
-    background: transparent;
-  }
 }
 
 .searchInput {
@@ -261,27 +229,6 @@
 
 .searchInput::placeholder {
   color: var(--dsw-alias-label-tertiary);
-}
-
-.clearButton {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border: none;
-  border-radius: var(--dsw-radius-sm);
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
-  color: var(--dsw-alias-label-secondary);
-}
-
-@media (hover: hover) {
-  .clearButton:hover {
-    background: var(--dsw-alias-interactive-bg-hover);
-  }
 }
 
 /* Rail variant (own .rail class from the wide owner prop — the region never
@@ -318,19 +265,6 @@
   border-radius: var(--dsw-radius-md);
   border-color: transparent;
   background: transparent;
-}
-
-.rail .searchButton {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--dsw-radius-md);
-  color: var(--dsw-alias-label-primary);
-}
-
-@media (hover: hover) {
-  .rail .searchButton:hover {
-    background: var(--dsw-alias-interactive-bg-hover);
-  }
 }
 
 /* List seat: always mounted so the shell foot never moves. */
@@ -577,7 +511,7 @@
   width: 100%;
   height: 44px;
   padding: 7px 14px;
-  border: 0.5px solid var(--dsw-alias-border-l4);
+  border: 0.2px solid var(--dsw-alias-border-l4);
   border-radius: var(--dsw-radius-lg);
   outline: none;
   background: transparent;

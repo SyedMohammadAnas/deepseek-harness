@@ -33,7 +33,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import type { CSSProperties, ReactNode, RefObject } from 'react'
 import type { ContextMenuTarget } from '@deepseek-ai/dsh-client-ui-context-menu/client'
 import type { ShortcutCatalogEntry } from '@deepseek-ai/dsh-client-shortcuts/client'
-import { IconPanelLeftOutlineRegular, Tooltip } from '@deepseek-ai/dsh-client-ui-primitives'
+import { Button, IconPanelLeftOutlineRegular, Tooltip } from '@deepseek-ai/dsh-client-ui-primitives'
 import type {
   HostObservable, InjectFace, PropsLocale, PropsRenderSlots, PropsRuntime, PropsStore,
 } from '@deepseek-ai/dsh-client-ui-slots'
@@ -278,28 +278,28 @@ function PanelChrome({ sessionId, fullscreen, actions, t, shortcuts, toggleFulls
   return (
     <>
       <Tooltip label={modeLabel} shortcutKeys={mode?.keys} side="bottom" delayMs={500}>
-        <button
-          type="button"
-          className={css.iconButton}
+        <Button
+          variant="ghost"
+          className="size-7 shrink-0 p-0"
           aria-label={modeLabel}
           aria-keyshortcuts={mode?.aria}
           data-sidebar-right-mode={next}
           onClick={toggleFullscreen}
         >
           {fullscreen ? <ExitFullscreenGlyph /> : <FullscreenGlyph />}
-        </button>
+        </Button>
       </Tooltip>
       <Tooltip label={t('chrome.collapse')} shortcutKeys={toggle?.keys} side="bottom" delayMs={500}>
-        <button
-          type="button"
-          className={css.iconButton}
+        <Button
+          variant="ghost"
+          className="size-7 shrink-0 p-0"
           aria-label={t('chrome.collapseAria')}
           aria-keyshortcuts={toggle?.aria}
           data-sidebar-right-toggle
           onClick={() => { actions.toggleExpanded(sessionId) }}
         >
           <IconPanelLeftOutlineRegular className={css.collapseGlyph} />
-        </button>
+        </Button>
       </Tooltip>
     </>
   )

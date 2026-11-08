@@ -39,7 +39,7 @@
   justify-content: center;
   gap: 6px;
   box-sizing: border-box;
-  border-bottom: 0.5px solid var(--dsw-alias-border-l2);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l2);
   background: var(--dsw-alias-bg-layer-1);
   color: var(--dsw-alias-label-secondary);
   font: var(--dsw-font-xxs-12);
@@ -134,7 +134,7 @@
   height: 30px;
   padding: 0 8px;
   overflow: hidden;
-  border-bottom: 0.5px solid var(--dsw-alias-border-l2);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l2);
   color: var(--dsw-alias-label-tertiary);
   background: var(--dsw-specific-sidebar-fill);
   font: var(--dsw-font-xxs-12);
@@ -155,7 +155,7 @@
   height: 30px;
   padding: 0 8px;
   overflow: hidden;
-  border-bottom: 0.5px solid var(--dsw-alias-border-l1);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l1);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -256,7 +256,7 @@
   left: 17px;
   width: max-content;
   padding: 0 4px;
-  border: 0.5px solid var(--dsw-alias-border-l1);
+  border: 0.2px solid var(--dsw-alias-border-l1);
   border-radius: 2px;
   color: var(--dsw-alias-label-secondary);
   background: var(--dsw-alias-bg-layer-1);
@@ -894,7 +894,7 @@
   max-width: calc(100% - 280px);
   min-width: 0;
   min-height: 0;
-  border-left: 0.5px solid var(--dsw-alias-border-l2);
+  border-left: 0.2px solid var(--dsw-alias-border-l2);
   background: var(--dsw-alias-bg-layer-1);
 }
 
@@ -925,7 +925,7 @@
   box-sizing: border-box;
   height: 42px;
   padding: 0 8px 0 12px;
-  border-bottom: 0.5px solid var(--dsw-alias-border-l2);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l2);
 }
 
 .detailsTitle {
@@ -995,7 +995,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   gap: 1px;
-  border-bottom: 0.5px solid var(--dsw-alias-border-l2);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l2);
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   white-space: nowrap;
@@ -1797,7 +1797,7 @@
   min-width: 0;
   padding: 8px;
   gap: 10px;
-  border: 0.5px solid var(--dsw-alias-border-l2-darkmode-thin);
+  border: 0.2px solid var(--dsw-alias-border-l2-darkmode-thin);
   border-radius: var(--dsw-radius-lg);
 }
 
@@ -1837,7 +1837,7 @@
 
 .attachmentDisclosure {
   margin-block: 8px;
-  border: 0.5px solid var(--dsw-alias-border-l2-darkmode-thin);
+  border: 0.2px solid var(--dsw-alias-border-l2-darkmode-thin);
   border-radius: var(--dsw-radius-md);
 }
 
@@ -1953,7 +1953,7 @@
 }
 
 .toolCatalogItem {
-  border-bottom: 0.5px solid var(--dsw-alias-border-l1);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l1);
 }
 
 .toolCatalogSummary {

@@ -7,7 +7,7 @@ import type { PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots
 // free of host value imports, so no host Context merge enters this program.
 import type { TodoItem } from '@deepseek-ai/dsh-tool-todo/client'
 import {
-  IconChecklistOutlineRegular, IconChevronDownOutlineRegular, IconChevronUpOutlineRegular, StateDot,
+  Button, IconChecklistOutlineRegular, IconChevronDownOutlineRegular, IconChevronUpOutlineRegular, StateDot,
   type StateDotState,
 } from '@deepseek-ai/dsh-client-ui-primitives'
 import { NS } from '../locales.ts'
@@ -69,9 +69,9 @@ export function TodoPanel({ todos, t }: TodoPanelProps) {
   return (
     <section className={css.root} data-testid="todo-panel" aria-label={t('todo.title')}>
       <div className={css.body}>
-        <button
-          type="button"
-          className={css.header}
+        <Button
+          variant="ghost"
+          className="h-auto w-full justify-start gap-2.5 rounded-md px-1 py-0.5 text-left"
           aria-expanded={!collapsed}
           onClick={() => { setCollapsed(v => !v) }}
         >
@@ -81,7 +81,7 @@ export function TodoPanel({ todos, t }: TodoPanelProps) {
           <span className={css.chevron} aria-hidden>
             {collapsed ? <IconChevronUpOutlineRegular /> : <IconChevronDownOutlineRegular />}
           </span>
-        </button>
+        </Button>
         {!collapsed && (
           <ul className={css.list}>
             {todos.map(item => (

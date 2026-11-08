@@ -16,7 +16,7 @@
 .chip {
   height: 28px;
   padding: 0 12px;
-  border: 0.5px solid var(--dsw-alias-border-l4);
+  border: 0.2px solid var(--dsw-alias-border-l4);
   border-radius: var(--dsw-radius-sm);
   background: transparent;
   color: var(--dsw-alias-label-primary);
@@ -68,7 +68,7 @@
   box-sizing: border-box;
   margin-top: 18px;
   padding: 12px 14px;
-  border: 0.5px solid var(--dsw-alias-border-l4);
+  border: 0.2px solid var(--dsw-alias-border-l4);
   border-radius: var(--dsw-radius-lg);
   background: var(--dsw-alias-bg-layer-1);
   color: var(--dsw-alias-label-primary);

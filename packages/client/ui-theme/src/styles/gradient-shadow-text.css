@@ -30,7 +30,7 @@ body[data-ds-dark-theme] [data-menu-material] {
    （同 scrollbar.css 对 --dsh-scrollbar-thumb 的处理）。 */
 body,
 body * {
-  --dsw-elevation-stroke: 0 0 0 0.5px var(--dsw-elevation-stroke-color);
+  --dsw-elevation-stroke: 0 0 0 0.2px var(--dsw-elevation-stroke-color);
   --dsw-elevation-panel:
     var(--dsw-elevation-stroke), 0 3px 8px 0 rgba(0, 0, 0, 0.03), 0 0 16px 0 rgba(0, 0, 0, 0.02);
   --dsw-elevation-prominent:

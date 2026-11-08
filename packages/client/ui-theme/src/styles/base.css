@@ -15,12 +15,14 @@
   --ds-transition-duration: 0.2s;
   --ds-transition-duration-fast: 0.1s;
   --ds-transition-duration-slow: 0.3s;
+  /* thegacs fork: the shadcn radius scale (base 10px), so every component
+     that already reads a token adopts shadcn geometry at once. */
   --dsw-radius-xs: 4px;
-  --dsw-radius-sm: 8px;
-  --dsw-radius-md: 12px;
-  --dsw-radius-lg: 16px;
-  --dsw-radius-xl: 20px;
-  --dsw-radius-panel: 28px;
+  --dsw-radius-sm: 6px;
+  --dsw-radius-md: 8px;
+  --dsw-radius-lg: 10px;
+  --dsw-radius-xl: 14px;
+  --dsw-radius-panel: 18px;
 }
 
 /* User font lists (--dsh-font-family-text/-code, written on body by the theme

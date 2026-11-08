@@ -56,7 +56,7 @@ describe('chat flow font-size axis', () => {
     expect(declarationsFrom(actions, '.timeEnd')).toEqual(expect.arrayContaining([
       'font-size: calc(var(--dsh-content-font-size-secondary, 13px) - 1px)',
     ]))
-    expect(declarationsFrom(actions, '.action svg')).toEqual(expect.arrayContaining([
+    expect(declarationsFrom(actions, '[data-message-action] svg')).toEqual(expect.arrayContaining([
       'width: calc(15px + var(--dsh-content-font-delta, 0px))',
       'height: calc(15px + var(--dsh-content-font-delta, 0px))',
     ]))

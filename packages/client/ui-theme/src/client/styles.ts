@@ -36,9 +36,10 @@ export function installThemeStyles(ctx: Context): void {
     const matchMedia = typeof view.matchMedia === 'function' ? view.matchMedia.bind(view) : undefined
     let resolution: MediaQueryList | undefined
     const updateStroke = (): void => {
-      // Positive borders round down to whole device pixels, with a one-pixel minimum.
+      // thegacs: a fixed sub-pixel hairline. The DPR-rounded width rendered a
+      // full device pixel at DPR 1, which read as a heavy stroke.
       const dpr = view.devicePixelRatio
-      const width = Math.max(1, Math.floor(0.5 * dpr)) / dpr
+      const width = 0.2
       root.style.setProperty(HAIRLINE_WIDTH, `${width}px`)
       resolution?.removeEventListener('change', updateStroke)
       resolution = matchMedia?.(`(resolution: ${dpr}dppx)`)

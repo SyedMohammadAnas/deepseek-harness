@@ -49,7 +49,7 @@ describe('elevation tokens', () => {
     // --dsw-elevation-stroke-color rebind a no-op. Per-element declarations
     // re-substitute against the color each element sees (the same contract
     // scrollbar.css states for --dsh-scrollbar-thumb).
-    expect(perElement.get('--dsw-elevation-stroke')).toBe(`0 0 0 0.5px var(${STROKE_COLOR})`)
+    expect(perElement.get('--dsw-elevation-stroke')).toBe(`0 0 0 0.2px var(${STROKE_COLOR})`)
     for (const name of ['--dsw-elevation-panel', '--dsw-elevation-prominent', '--dsw-elevation-soft']) {
       expect(perElement.get(name), name).toMatch(/^var\(--dsw-elevation-stroke\), 0 /)
       expect(bodyOnly.has(name), name).toBe(false)
@@ -194,7 +194,7 @@ function wideNeutralBorders(css: string, exempt: Set<string> = new Set()): strin
     for (const [property, value] of rule.declarations) {
       if (!BORDER_EDGE.test(property)) continue
       if (!value.includes('solid') || !NEUTRAL_BORDER.test(value)) continue
-      if (value.startsWith('0.5px ')) continue
+      if (value.startsWith('0.2px ')) continue
       if (rule.selectors.some(selector => exempt.has(selector))) continue
       wide.push(`${rule.selectors.join(', ')} ${property}: ${value}`)
     }
@@ -244,10 +244,10 @@ describe('neutral solid borders are hairlines', () => {
   it('rejects a wide neutral border and a wide filled divider', () => {
     expect(wideNeutralBorders('.a { border: 1px solid var(--dsw-alias-border-l2); }'))
       .toEqual(['.a border: 1px solid var(--dsw-alias-border-l2)'])
-    expect(wideNeutralBorders('.a { border: 0.5px solid var(--dsw-alias-border-l2); }')).toEqual([])
+    expect(wideNeutralBorders('.a { border: 0.2px solid var(--dsw-alias-border-l2); }')).toEqual([])
     expect(wideFilledDividers('.a { background: var(--dsw-alias-border-l2); height: 1px; }'))
       .toEqual(['.a height: 1px'])
-    expect(wideFilledDividers('.a { background: var(--dsw-alias-border-l2); height: 0.5px; }')).toEqual([])
+    expect(wideFilledDividers('.a { background: var(--dsw-alias-border-l2); height: 0.2px; }')).toEqual([])
   })
 
   it('draws every solid neutral-token border at 0.5px under packages/', () => {

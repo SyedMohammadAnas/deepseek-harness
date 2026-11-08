@@ -4712,7 +4712,8 @@ describe('ChatView', () => {
     expect(status?.lastElementChild?.textContent).toBe('深度求索中')
     const icon = status?.querySelector('svg')?.parentElement
     expect(icon?.getAttribute('aria-hidden')).toBe('true')
-    expect(icon?.firstElementChild?.tagName).toBe('SPAN')
+    // The brand mark replaces the inherited whale-mask pair: one svg child.
+    expect(icon?.firstElementChild?.tagName).toBe('svg')
     expect(icon?.querySelectorAll('path')).toHaveLength(1)
     expect(icon?.getAttribute('style')).toBeNull()
     expect(status?.querySelector('animate')).toBeNull()

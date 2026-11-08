@@ -52,7 +52,7 @@
 }
 
 .card {
-  border: 0.5px solid var(--dsw-alias-settings-card-stroke);
+  border: 0.2px solid var(--dsw-alias-settings-card-stroke);
   border-radius: var(--dsw-radius-xl);
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@
    has no alias-layer name). */
 .cardActive {
   background: var(--dsw-alias-bg-module-platform);
-  border-color: var(--dsw-static-neutral-bluish-400);
+  border-color: var(--dsw-alias-border-l3);
 }
 
 /* Mode selection is off, not the preset itself: mute only the selectable
@@ -276,7 +276,7 @@
   justify-content: flex-end;
   gap: 2px;
   padding: 6px 10px;
-  border-top: 0.5px solid var(--dsw-alias-border-l2);
+  border-top: 0.2px solid var(--dsw-alias-border-l2);
 }
 
 .cardHelp {
@@ -369,7 +369,7 @@
   padding: 12px;
   max-height: min(60vh, 560px);
   overflow: auto;
-  border: 0.5px solid var(--dsw-alias-border-l4);
+  border: 0.2px solid var(--dsw-alias-border-l4);
   border-radius: var(--dsw-radius-lg);
   background: var(--dsw-alias-bg-layer-2);
   color: var(--dsw-alias-label-secondary);

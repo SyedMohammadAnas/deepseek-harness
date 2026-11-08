@@ -16,7 +16,7 @@
   box-sizing: border-box;
   height: 38px;
   padding: 5px 6px;
-  border-bottom: 0.5px solid var(--dsw-alias-border-l3);
+  border-bottom: 0.2px solid var(--dsw-alias-border-l3);
 }
 
 .tool {
@@ -65,7 +65,7 @@
   color: var(--dsw-alias-label-primary);
   font: var(--dsw-font-xxs-12);
   background: var(--dsw-alias-bg-layer-1);
-  border: 0.5px solid var(--dsw-alias-border-l2);
+  border: 0.2px solid var(--dsw-alias-border-l2);
   border-radius: var(--dsw-radius-sm);
 }
 
@@ -240,7 +240,7 @@
   font: var(--dsw-font-xxxs-11);
   text-overflow: ellipsis;
   white-space: nowrap;
-  border-top: 0.5px solid var(--dsw-alias-border-l3);
+  border-top: 0.2px solid var(--dsw-alias-border-l3);
 }
 
 .titleIcon {

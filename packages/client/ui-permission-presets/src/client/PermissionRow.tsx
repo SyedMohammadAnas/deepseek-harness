@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import type { SnapshotStore } from '@deepseek-ai/dsh-client-store'
 import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 import {
-  IconChevronDownOutlineRegular, Menu, RiskConfirmation,
+  Button, IconChevronDownOutlineRegular, Menu, RiskConfirmation,
 } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { PermissionSettingsState } from './settings-store.ts'
 import type { PermissionSettingsKey } from './locales.ts'
@@ -88,9 +88,9 @@ export function PermissionRow({ load, select, usePermission, t }: PermissionRowP
           align="end"
           portal
           anchor={(
-            <button
-              type="button"
-              className={css.selector}
+            <Button
+              variant="outline"
+              className="h-9 gap-3 px-3.5"
               aria-haspopup="menu"
               aria-expanded={open}
               disabled={busy || !state.writable || state.options.length === 0}
@@ -98,7 +98,7 @@ export function PermissionRow({ load, select, usePermission, t }: PermissionRowP
             >
               {label}
               <IconChevronDownOutlineRegular className={css.chevron} />
-            </button>
+            </Button>
           )}
         />
       </div>

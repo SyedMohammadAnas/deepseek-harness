@@ -15,7 +15,7 @@ const TYPE_COLORS: Readonly<Record<TraditionalFileType, string>> = {
   html: 'var(--dsw-static-deepseek-500)',
   image: 'var(--dsh-file-type-violet)',
   markdown: 'var(--dsw-static-deepseek-500)',
-  other: 'var(--dsw-static-neutral-bluish-300)',
+  other: 'var(--dsw-alias-label-tertiary)',
   pdf: 'var(--dsw-static-red-600)',
   ppt: 'var(--dsw-static-amber-500)',
   video: 'var(--dsh-file-type-violet)',

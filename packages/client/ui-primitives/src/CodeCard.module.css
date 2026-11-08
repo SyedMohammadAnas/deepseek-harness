@@ -3,6 +3,9 @@
   margin: 16px 0;
   color: var(--dsw-alias-label-primary);
   background: var(--dsw-alias-markdown-code-block);
+  /* shadcn code block: a hairline-bordered card rather than a bare tinted
+     block, shared by code, diffs and file reads. */
+  border: 0.2px solid var(--dsw-alias-border-l1);
   border-radius: var(--dsw-radius-lg);
   font: var(--dsw-font-markdown-code-block);
 }
@@ -12,12 +15,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 18px 8px 22px;
+  padding: 8px 12px;
   background: var(--dsl-code-block-background, var(--dsw-alias-markdown-code-block));
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
+  border-bottom: 0.2px solid var(--dsw-alias-border-l1);
   color: var(--dsw-alias-label-secondary);
-  font: 11px/18px var(--dsw-font-family);
+  font: 12px/18px var(--dsw-font-family);
 }
 
 .heading {
@@ -79,7 +83,7 @@
 }
 
 .body {
-  padding: 6px 22px 20px;
+  padding: 12px 16px 16px;
   font: var(--dsw-font-markdown-code-block);
   overflow-x: auto;
 }

@@ -173,7 +173,7 @@
 }
 
 .tabCell[data-dockkit-host='dock'][data-dockkit-column='0'] > .tabHost {
-  border-left: 0.5px solid var(--dsw-alias-border-l4);
+  border-left: 0.2px solid var(--dsw-alias-border-l4);
 }
 
 .tabHostHeader {
@@ -585,7 +585,7 @@
   flex-direction: column;
   min-width: 96px;
   padding: 4px;
-  border: 0.5px solid var(--dsw-alias-border-l2);
+  border: 0.2px solid var(--dsw-alias-border-l2);
 }
 
 .menu:not(:has([role='menuitem'], [role='menuitemcheckbox'], [role='menuitemradio'])) {

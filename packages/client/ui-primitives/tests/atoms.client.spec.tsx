@@ -5,7 +5,6 @@ import { afterEach, beforeEach, describe, expect, it, onTestFinished, vi } from 
 import { Button, ConnectionIndicator, Input, Menu, MenuItemButton, Modal, Pill } from '@deepseek-ai/dsh-client-ui-primitives'
 import { POINTER_GRACE_MS } from '../src/pointer-grace.ts'
 import { focusWithoutRing } from '../src/focus.ts'
-import buttonCss from '../src/Button.module.css'
 
 afterEach(cleanup)
 
@@ -93,13 +92,13 @@ describe('Button', () => {
     expect(onClick).not.toHaveBeenCalled()
   })
 
-  it('selects the outline stylesheet for outlined actions only', () => {
+  it('selects the shadcn outline family for outlined actions only', () => {
     const { rerender } = render(<Button variant="outline">Cancel</Button>)
     const button = screen.getByRole('button', { name: 'Cancel' })
-    expect(button.classList.contains(buttonCss.outline!)).toBe(true)
+    expect(button.classList.contains('border-[0.2px]')).toBe(true)
     for (const variant of ['primary', 'ghost', 'toolbar'] as const) {
       rerender(<Button variant={variant}>Cancel</Button>)
-      expect(button.classList.contains(buttonCss.outline!)).toBe(false)
+      expect(button.classList.contains('border-[0.2px]')).toBe(false)
     }
   })
 

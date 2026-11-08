@@ -19,7 +19,7 @@ import clsx from 'clsx'
 import { WorkspaceDialogs } from './WorkspaceDialogs.tsx'
 import {
   AnimatedRows, HoverCardGroup, IconArchiveCheckOutlineRegular, IconArchiveOffOutlineRegular, IconArchiveOutlineRegular,
-  IconChevronsUpDownOutlineRegular, IconClockOutlineRegular, IconCloseFillRegular,
+  Button, IconChevronsUpDownOutlineRegular, IconClockOutlineRegular, IconCloseFillRegular,
   IconFlatListOutlineRegular, IconFolderCloseRegular, IconProjectAddOutlineRegular,
   IconQueueOutlineRegular, IconSearchOutlineRegular, IconSlidersTwoOutlineRegular,
   IconWorkspaceTreeOutlineRegular, Menu, Tooltip,
@@ -1239,9 +1239,9 @@ export function WorkspaceBrowser({
               }}
             >
               <Tooltip label={t('search')} shortcutKeys={searchShortcut?.keys} side="bottom" delayMs={500} disabled={searchExpanded} portal>
-                <button
-                  type="button"
-                  className={css.searchButton}
+                <Button
+                  variant="ghost"
+                  className="size-7 shrink-0 p-0"
                   aria-label={t('search.sessions.aria')}
                   aria-keyshortcuts={searchShortcut?.aria}
                   aria-expanded={searchExpanded}
@@ -1250,7 +1250,7 @@ export function WorkspaceBrowser({
                   }}
                 >
                   <IconSearchOutlineRegular size={searchExpanded ? 11 : 14} />
-                </button>
+                </Button>
               </Tooltip>
               <input
                 ref={searchInput}
@@ -1268,9 +1268,9 @@ export function WorkspaceBrowser({
                 }}
               />
               {searchExpanded && (
-                <button
-                  type="button"
-                  className={css.clearButton}
+                <Button
+                  variant="ghost"
+                  className="size-6 shrink-0 p-0 text-muted-foreground"
                   aria-label={t('search.clear')}
                   onClick={(e) => {
                     e.stopPropagation()
@@ -1279,7 +1279,7 @@ export function WorkspaceBrowser({
                   }}
                 >
                   <IconCloseFillRegular />
-                </button>
+                </Button>
               )}
             </div>
           </div>
@@ -1339,9 +1339,9 @@ export function WorkspaceBrowser({
       {/* The collapsed rail keeps search as its own 36px control. */}
       {!wide && <div className={css.search}>
         <Tooltip label={t('search')} shortcutKeys={searchShortcut?.keys} portal>
-          <button
-            type="button"
-            className={css.searchButton}
+          <Button
+            variant="ghost"
+            className="size-9 shrink-0 p-0"
             aria-label={t('search.sessions.aria')}
             aria-keyshortcuts={searchShortcut?.aria}
             onClick={() => {
@@ -1349,7 +1349,7 @@ export function WorkspaceBrowser({
             }}
           >
             <IconSearchOutlineRegular size={18} />
-          </button>
+          </Button>
         </Tooltip>
       </div>}
 

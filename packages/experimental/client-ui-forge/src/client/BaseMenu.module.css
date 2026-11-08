@@ -13,7 +13,7 @@
   max-width: 100%;
   height: 26px;
   padding: 0 6px 0 8px;
-  border: 0.5px solid var(--dsw-alias-border-l2);
+  border: 0.2px solid var(--dsw-alias-border-l2);
   border-radius: var(--dsw-radius-sm);
   background: transparent;
   color: var(--dsw-alias-label-primary);
@@ -140,7 +140,7 @@
 
 .note {
   padding: 8px 12px;
-  border-top: 0.5px solid var(--dsw-alias-border-l3);
+  border-top: 0.2px solid var(--dsw-alias-border-l3);
   color: var(--dsw-alias-label-tertiary);
   font-size: 11px;
   line-height: 16px;

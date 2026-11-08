@@ -4,7 +4,7 @@ import type { FileAttachmentRef, ImageAttachmentRef } from '@deepseek-ai/dsh-att
 import type { PropsLocale, PropsRenderFactories, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
 import type { SessionId } from '@deepseek-ai/dsh-session/types'
 import {
-  IconCheckOutlineRegular, IconChevronDownOutlineRegular, IconChevronUpOutlineRegular, IconCloseOutlineRegular,
+  Button, IconCheckOutlineRegular, IconChevronDownOutlineRegular, IconChevronUpOutlineRegular, IconCloseOutlineRegular,
   FileTypeIcon, fileSizeText, IconEditOutlineRegular, InlineEditor, IconQueueOutlineRegular, IconSendOutlineRegular,
   IconTrashOutlineRegular, Tooltip,
 } from '@deepseek-ai/dsh-client-ui-primitives'
@@ -239,35 +239,35 @@ export function QueueDock({ useSession, useProjection, updateQueue, notify, load
                     ? (
                       <>
                         <Tooltip portal label={t('queue.save')} side="bottom" delayMs={500}>
-                          <button
-                            type="button"
-                            className={css.action}
+                          <Button
+                            variant="ghost"
+                            className="size-7 shrink-0 rounded-full p-0"
                             aria-label={t('queue.save')}
                             disabled={busy !== null || editing.text.trim() === ''}
                             onClick={() => { void saveEdit() }}
                           >
                             <IconCheckOutlineRegular size={14} />
-                          </button>
+                          </Button>
                         </Tooltip>
                         <Tooltip portal label={t('queue.cancelEdit')} side="bottom" delayMs={500}>
-                          <button
-                            type="button"
-                            className={css.action}
+                          <Button
+                            variant="ghost"
+                            className="size-7 shrink-0 rounded-full p-0"
                             aria-label={t('queue.cancelEdit')}
                             disabled={busy !== null}
                             onClick={() => { setEditing(null) }}
                           >
                             <IconCloseOutlineRegular size={14} />
-                          </button>
+                          </Button>
                         </Tooltip>
                       </>
                     )
                     : (
                       <>
                         <Tooltip portal label={t('queue.edit')} side="bottom" delayMs={500} disabled={text === null}>
-                          <button
-                            type="button"
-                            className={css.action}
+                          <Button
+                            variant="ghost"
+                            className="size-7 shrink-0 rounded-full p-0"
                             aria-label={t('queue.edit')}
                             // Disabled buttons fire no hover events, so the
                             // unsupported hint stays a native title.
@@ -278,12 +278,12 @@ export function QueueDock({ useSession, useProjection, updateQueue, notify, load
                             }}
                           >
                             <IconEditOutlineRegular size={14} />
-                          </button>
+                          </Button>
                         </Tooltip>
                         <Tooltip portal label={t('queue.remove')} side="bottom" delayMs={500}>
-                          <button
-                            type="button"
-                            className={css.action}
+                          <Button
+                            variant="ghost"
+                            className="size-7 shrink-0 rounded-full p-0"
                             aria-label={t('queue.remove')}
                             disabled={busy !== null}
                             onClick={() => {
@@ -295,12 +295,12 @@ export function QueueDock({ useSession, useProjection, updateQueue, notify, load
                             }}
                           >
                             <IconTrashOutlineRegular size={14} />
-                          </button>
+                          </Button>
                         </Tooltip>
                         <Tooltip portal label={t('queue.steer')} side="bottom" delayMs={500} disabled={!running}>
-                          <button
-                            type="button"
-                            className={css.action}
+                          <Button
+                            variant="ghost"
+                            className="size-7 shrink-0 rounded-full p-0"
                             aria-label={t('queue.steer')}
                             title={running ? undefined : t('queue.steer.unavailable')}
                             disabled={busy !== null || !running}
@@ -313,7 +313,7 @@ export function QueueDock({ useSession, useProjection, updateQueue, notify, load
                             }}
                           >
                             <IconSendOutlineRegular />
-                          </button>
+                          </Button>
                         </Tooltip>
                       </>
                     )}
@@ -352,33 +352,33 @@ export function QueueDock({ useSession, useProjection, updateQueue, notify, load
                 })}</span>
                 <span className={css.status} role="status">{t('queue.sending')}</span>
                 {queueMutable && <div className={css.actions}>
-                  <button
+                  <Button
                     type="button"
-                    className={css.action}
+                    variant="ghost" className="size-7 shrink-0 rounded-full p-0"
                     aria-label={t('queue.edit')}
                     title={t('queue.sending')}
                     disabled
                   >
                     <IconEditOutlineRegular size={14} />
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     type="button"
-                    className={css.action}
+                    variant="ghost" className="size-7 shrink-0 rounded-full p-0"
                     aria-label={t('queue.remove')}
                     title={t('queue.sending')}
                     disabled
                   >
                     <IconTrashOutlineRegular size={14} />
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     type="button"
-                    className={css.action}
+                    variant="ghost" className="size-7 shrink-0 rounded-full p-0"
                     aria-label={t('queue.steer')}
                     title={t('queue.sending')}
                     disabled
                   >
                     <IconSendOutlineRegular />
-                  </button>
+                  </Button>
                 </div>}
               </li>
             )

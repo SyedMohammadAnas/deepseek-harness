@@ -54,20 +54,6 @@
   white-space: nowrap;
 }
 
-.action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 6px;
-  border: none;
-  border-radius: var(--dsw-radius-sm);
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-}
-
 .action svg {
   width: 15px;
   height: 15px;

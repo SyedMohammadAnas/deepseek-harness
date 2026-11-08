@@ -142,7 +142,7 @@
 }
 
 .colorSystem {
-  --meter-tint: var(--dsw-static-neutral-bluish-400);
+  --meter-tint: var(--dsw-alias-label-tertiary);
 }
 
 .colorTools {
